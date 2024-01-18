@@ -1,8 +1,15 @@
-import { MDXContent } from "@/components";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { allPages } from "contentlayer/generated";
+import dynamic from "next/dynamic";
+
+const MDXContent = dynamic(
+  () => {
+    return import("@/components/mdx-content");
+  },
+  { ssr: false }
+);
 
 interface AboutPageProps {
   params: {
@@ -13,6 +20,10 @@ interface AboutPageProps {
 async function getPageFromParams({ params }: AboutPageProps) {
   const slug = params.slug?.join("/") || "";
   const doc = allPages.find((doc) => doc.slugAsParams === slug);
+
+  if (!doc) {
+    return {};
+  }
 
   return { doc };
 }

@@ -1,24 +1,29 @@
 import type { Metadata } from "next";
-
 import { notFound } from "next/navigation";
 import { allBlogs } from "contentlayer/generated";
 import { Link, User } from "@nextui-org/react";
 import { format, parseISO } from "date-fns";
 import NextLink from "next/link";
 import { Balancer } from "react-wrap-balancer";
-
-import { MDXContent } from "@/components/mdx-content";
 import { siteConfig } from "@/config/site";
 import { Route } from "@/libs/docs/page";
 import { ChevronRightLinearIcon } from "@/components/icons";
+import dynamic from "next/dynamic";
 
-interface BlogPostProps {
+const MDXContent = dynamic(
+  () => {
+    return import("@/components/mdx-content");
+  },
+  { ssr: false }
+);
+
+interface BlogProps {
   params: {
     slug: string;
   };
 }
 
-async function getBlogPostFromParams({ params }: BlogPostProps) {
+async function getBlogFromParams({ params }: BlogProps) {
   const slug = params.slug || "";
   const post = allBlogs.find((post) => post.slugAsParams === slug);
 
@@ -37,8 +42,8 @@ async function getBlogPostFromParams({ params }: BlogPostProps) {
 
 export async function generateMetadata({
   params,
-}: BlogPostProps): Promise<Metadata> {
-  const { post } = await getBlogPostFromParams({ params });
+}: BlogProps): Promise<Metadata> {
+  const { post } = await getBlogFromParams({ params });
 
   if (!post) {
     return {};
@@ -71,16 +76,14 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<
-  BlogPostProps["params"][]
-> {
+export async function generateStaticParams(): Promise<BlogProps["params"][]> {
   return allBlogs.map((doc) => ({
     slug: doc.slugAsParams,
   }));
 }
 
-export default async function DocPage({ params }: BlogPostProps) {
-  const { post } = await getBlogPostFromParams({ params });
+export default async function DocPage({ params }: BlogProps) {
+  const { post } = await getBlogFromParams({ params });
 
   if (!post) {
     notFound();

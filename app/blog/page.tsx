@@ -1,6 +1,6 @@
 import { allBlogs } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
-import { BlogPostList } from "@/components/blog-post";
+import { BlogList } from "@/components";
 
 export default function Blog() {
   const posts = allBlogs.sort((a, b) =>
@@ -17,7 +17,7 @@ export default function Blog() {
           All the latest job about me.
         </h5>
       </div>
-      <BlogPostList posts={posts} />
+      <BlogList posts={posts} />
     </div>
   );
 }

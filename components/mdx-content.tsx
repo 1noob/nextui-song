@@ -5,13 +5,13 @@ import type { MDXComponents as MDXComponentsType } from "mdx/types";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { MDXComponents } from "./mdx-components";
+import React from "react";
 
 interface MDXContentProps {
   code: string;
 }
 
-
-export function MDXContent({ code }: MDXContentProps) {
+const MDXContent: React.FC<unknown> = ({ code }: MDXContentProps) => {
   const Component = useMDXComponent(code);
 
   return (
@@ -19,4 +19,6 @@ export function MDXContent({ code }: MDXContentProps) {
       <Component components={MDXComponents as MDXComponentsType} />
     </div>
   );
-}
+};
+
+export default MDXContent;

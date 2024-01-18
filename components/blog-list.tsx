@@ -18,7 +18,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useIsMounted } from "@/hooks/use-is-mounted";
 import { trackEvent } from "@/utils/va";
 
-const BlogPostCard = (post: Blog) => {
+const BlogCard = (post: Blog) => {
   const isMounted = useIsMounted();
 
   const handlePress = () => {
@@ -81,11 +81,11 @@ const BlogPostCard = (post: Blog) => {
   );
 };
 
-export const BlogPostList = ({ posts }: { posts: Blog[] }) => {
+export const BlogList = ({ posts }: { posts: Blog[] }) => {
   return (
     <div className="mt-10 grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
       {posts.map((post, idx) => (
-        <BlogPostCard key={idx} {...post} />
+        <BlogCard key={idx} {...post} />
       ))}
     </div>
   );

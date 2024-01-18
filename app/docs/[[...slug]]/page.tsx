@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-
 import { notFound } from "next/navigation";
 import { allDocs } from "contentlayer/generated";
-
-import { MDXContent } from "@/components";
 import { siteConfig } from "@/config/site";
 
 // TOC
 import { DocsPager, DocsToc } from "@/components/docs";
 import { Route } from "@/libs/docs/page";
 import { getHeadings } from "@/libs/docs/utils";
+import dynamic from "next/dynamic";
+
+const MDXContent = dynamic(
+  () => {
+    return import("@/components/mdx-content");
+  },
+  { ssr: false }
+);
 
 interface DocPageProps {
   params: {
