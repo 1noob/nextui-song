@@ -1,7 +1,3 @@
-import { Image } from "@nextui-org/react";
-import {DocsSidebar} from "@/components/docs";
-import manifest from "@/config/routes.json";
-
 interface AboutLayoutProps {
   children: React.ReactNode;
 }

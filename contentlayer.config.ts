@@ -50,8 +50,8 @@ const AuthorProperties = defineNestedType(() => ({
   }
 }));
 
-export const BlogPost = defineDocumentType(() => ({
-  name: "BlogPost",
+export const Blog = defineDocumentType(() => ({
+  name: "Blog",
   filePathPattern: `blog/**/*.mdx`,
   contentType: "mdx",
   fields: {
@@ -87,7 +87,7 @@ export const BlogPost = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Doc, Page, BlogPost],
+  documentTypes: [Doc, Page, Blog],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

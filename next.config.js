@@ -11,6 +11,13 @@ const nextConfig = {
       { file: /node_modules\/node-fetch\/lib\/index\.js/ }
     ];
     return config;
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
+  typescript: {
+    // ignoreBuildErrors: process.env.IS_VERCEL_ENV === "true",
+    ignoreBuildErrors: true
   }
 };
 

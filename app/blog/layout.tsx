@@ -1,5 +1,3 @@
-import { Image } from "@nextui-org/react";
-
 interface BlogLayoutProps {
   children: React.ReactNode;
 }

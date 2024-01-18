@@ -1,7 +1,5 @@
 "use client";
 
-import { Image } from "@nextui-org/react";
-
 import manifest from "@/config/routes.json";
 import { DocsSidebar } from "@/components/docs/sidebar";
 

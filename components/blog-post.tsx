@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogPost } from "contentlayer/generated";
+import { Blog } from "contentlayer/generated";
 import {
   Card,
   CardFooter,
@@ -18,7 +18,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useIsMounted } from "@/hooks/use-is-mounted";
 import { trackEvent } from "@/utils/va";
 
-const BlogPostCard = (post: BlogPost) => {
+const BlogPostCard = (post: Blog) => {
   const isMounted = useIsMounted();
 
   const handlePress = () => {
@@ -81,7 +81,7 @@ const BlogPostCard = (post: BlogPost) => {
   );
 };
 
-export const BlogPostList = ({ posts }: { posts: BlogPost[] }) => {
+export const BlogPostList = ({ posts }: { posts: Blog[] }) => {
   return (
     <div className="mt-10 grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
       {posts.map((post, idx) => (

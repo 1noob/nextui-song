@@ -1,16 +1,16 @@
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 
-import {notFound} from "next/navigation";
-import {allBlogPosts} from "contentlayer/generated";
-import {Link, User} from "@nextui-org/react";
-import {format, parseISO} from "date-fns";
+import { notFound } from "next/navigation";
+import { allBlogs } from "contentlayer/generated";
+import { Link, User } from "@nextui-org/react";
+import { format, parseISO } from "date-fns";
 import NextLink from "next/link";
-import {Balancer} from "react-wrap-balancer";
+import { Balancer } from "react-wrap-balancer";
 
-import {MDXContent} from "@/components/mdx-content";
-import {siteConfig} from "@/config/site";
-import {Route} from "@/libs/docs/page";
-import {ChevronRightLinearIcon} from "@/components/icons";
+import { MDXContent } from "@/components/mdx-content";
+import { siteConfig } from "@/config/site";
+import { Route } from "@/libs/docs/page";
+import { ChevronRightLinearIcon } from "@/components/icons";
 
 interface BlogPostProps {
   params: {
@@ -18,12 +18,12 @@ interface BlogPostProps {
   };
 }
 
-async function getBlogPostFromParams({params}: BlogPostProps) {
+async function getBlogPostFromParams({ params }: BlogPostProps) {
   const slug = params.slug || "";
-  const post = allBlogPosts.find((post) => post.slugAsParams === slug);
+  const post = allBlogs.find((post) => post.slugAsParams === slug);
 
   if (!post) {
-    return{};
+    return {};
   }
 
   const currentRoute: Route = {
@@ -32,11 +32,13 @@ async function getBlogPostFromParams({params}: BlogPostProps) {
     path: `/${post?._raw?.sourceFilePath}`,
   };
 
-  return {post, currentRoute};
+  return { post, currentRoute };
 }
 
-export async function generateMetadata({params}: BlogPostProps): Promise<Metadata> {
-  const {post} = await getBlogPostFromParams({params});
+export async function generateMetadata({
+  params,
+}: BlogPostProps): Promise<Metadata> {
+  const { post } = await getBlogPostFromParams({ params });
 
   if (!post) {
     return {};
@@ -69,14 +71,16 @@ export async function generateMetadata({params}: BlogPostProps): Promise<Metadat
   };
 }
 
-export async function generateStaticParams(): Promise<BlogPostProps["params"][]> {
-  return allBlogPosts.map((doc) => ({
+export async function generateStaticParams(): Promise<
+  BlogPostProps["params"][]
+> {
+  return allBlogs.map((doc) => ({
     slug: doc.slugAsParams,
   }));
 }
 
-export default async function DocPage({params}: BlogPostProps) {
-  const {post} = await getBlogPostFromParams({params});
+export default async function DocPage({ params }: BlogPostProps) {
+  const { post } = await getBlogPostFromParams({ params });
 
   if (!post) {
     notFound();
@@ -93,10 +97,16 @@ export default async function DocPage({params}: BlogPostProps) {
           href="/blog"
           size="sm"
         >
-          <ChevronRightLinearIcon className="rotate-180 inline-block mr-1" size={15} />
+          <ChevronRightLinearIcon
+            className="rotate-180 inline-block mr-1"
+            size={15}
+          />
           Back to blog
         </Link>
-        <time className="block text-small mb-2 text-default-500" dateTime={post.date}>
+        <time
+          className="block text-small mb-2 text-default-500"
+          dateTime={post.date}
+        >
           {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>
         <div className="mb-3 flex w-full flex-col items-start">
