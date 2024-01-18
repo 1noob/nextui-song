@@ -40,6 +40,16 @@ export const Page = defineDocumentType(() => ({
   computedFields,
 }));
 
+const AuthorProperties = defineNestedType(() => ({
+  name: "AuthorProperties",
+  fields: {
+    name: {type: "string", required: true},
+    link: {type: "string", required: false},
+    avatar: {type: "string", required: false},
+    username: {type: "string", required: false},
+  }
+}));
+
 export const BlogPost = defineDocumentType(() => ({
   name: "BlogPost",
   filePathPattern: `blog/**/*.mdx`,
@@ -48,6 +58,7 @@ export const BlogPost = defineDocumentType(() => ({
     title: {type: "string", required: true},
     description: {type: "string", required: true},
     date: {type: "date", required: true},
+    author: {type: "nested",of: AuthorProperties, required: false},
     image: {type: "string", required: false},
   },
   computedFields: {
