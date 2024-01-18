@@ -1,9 +1,71 @@
-import { title } from "@/components/primitives";
+import { MDXContent } from "@/components";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import { allPages } from "contentlayer/generated";
 
-export default function AboutPage() {
-	return (
-		<div>
-			<h1 className={title()}>About</h1>
-		</div>
-	);
+interface AboutPageProps {
+  params: {
+    slug: string[];
+  };
+}
+
+async function getPageFromParams({ params }: AboutPageProps) {
+  const slug = params.slug?.join("/") || "";
+  const doc = allPages.find((doc) => doc.slugAsParams === slug);
+
+  return { doc };
+}
+
+export async function generateMetadata({
+  params,
+}: AboutPageProps): Promise<Metadata> {
+  const { doc } = await getPageFromParams({ params });
+
+  if (!doc) {
+    return {};
+  }
+
+  return {
+    title: doc.title,
+    description: doc.description,
+    openGraph: {
+      title: doc.title,
+      description: doc.description,
+      type: "article",
+      url: doc.url,
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: doc.title,
+      description: doc.description,
+      images: [siteConfig.ogImage],
+      creator: siteConfig.creator,
+    },
+  };
+}
+
+export default async function AboutPage({ params }: AboutPageProps) {
+  const { doc } = await getPageFromParams({ params });
+
+  if (!doc) {
+    notFound();
+  }
+  return (
+    <>
+      <div className="col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16 mt-10">
+        <div className="w-full prose prose-neutral">
+          <MDXContent code={doc.body.code} />
+        </div>
+      </div>
+    </>
+  );
 }

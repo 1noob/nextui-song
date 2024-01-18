@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "key": "acm",
+      "title": "ACM",
+      "defaultOpen": false,
+      "keywords": "acm",
+      "routes": [
+        {
+          "key": "string",
+          "title": "字符串",
+          "keywords": "string",
+          "path": "/docs/acm/string.mdx"
+        }
+      ]
+    }
+  ],
+  "mobileRoutes": [
+    {
+      "key": "nav",
+      "title": "Nav",
+      "defaultOpen": true,
+      "keywords": "nav, main routes, blog, about",
+      "routes": [
+        {
+          "key": "blog",
+          "title": "Blog",
+          "keywords": "blog",
+          "path": "/blog"
+        },
+        {
+          "key": "about",
+          "title": "About",
+          "keywords": "resume, cv",
+          "path": "/about"
+        }
+      ]
+    }
+  ]
+}

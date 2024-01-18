@@ -1,13 +1,15 @@
-export default function BlogLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
-	return (
-		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-			<div className="inline-block max-w-lg text-center justify-center">
-				{children}
-			</div>
-		</section>
-	);
+import { Image } from "@nextui-org/react";
+
+interface BlogLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function BlogLayout({ children }: BlogLayoutProps) {
+  return (
+    <>
+      <main className="relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100vh_-_64px_-_108px)] mb-12 flex-grow">
+        {children}
+      </main>
+    </>
+  );
 }

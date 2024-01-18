@@ -1,13 +1,20 @@
-export default function AboutLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
-	return (
-		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-			<div className="inline-block max-w-lg text-center justify-center">
-				{children}
-			</div>
-		</section>
-	);
+import { Image } from "@nextui-org/react";
+import {DocsSidebar} from "@/components/docs";
+import manifest from "@/config/routes.json";
+
+interface AboutLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function AboutLayout({ children }: AboutLayoutProps) {
+  return (
+    <>
+      <main className="relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100vh_-_64px_-_108px)] mb-12 flex-grow">
+          <div className="grid grid-cols-12">
+              <div className="hidden overflow-visible relative z-10 lg:block lg:col-span-2 mt-8 pr-4"/>
+              {children}
+          </div>
+      </main>
+    </>
+  );
 }

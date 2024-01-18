@@ -1,63 +1,89 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
+import manifest from "@/config/routes.json";
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { fontMono } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
+import { Navbar } from "@/components";
 import clsx from "clsx";
+import { Footer } from "@/components";
+import type { Viewport } from "next";
+import { Image } from "@nextui-org/react";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: 0,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export const metadata: Metadata = {
-	title: {
-		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
-	},
-	description: siteConfig.description,
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "black" },
-	],
-	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
-	},
+  metadataBase: new URL("https://song.jackey.love"),
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  twitter: siteConfig.twitter,
+  openGraph: siteConfig.openGraph,
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<head />
-			<body
-				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
-				)}
-			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-					<div className="relative flex flex-col h-screen">
-						<Navbar />
-						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-							{children}
-						</main>
-						<footer className="w-full flex items-center justify-center py-3">
-							<Link
-								isExternal
-								className="flex items-center gap-1 text-current"
-								href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-								title="nextui.org homepage"
-							>
-								<span className="text-default-600">Powered by</span>
-								<p className="text-primary">NextUI</p>
-							</Link>
-						</footer>
-					</div>
-				</Providers>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>SONG</title>
+      </head>
+      <body
+        className={clsx(
+          "min-h-screen bg-background font-mono antialiased",
+          fontMono.variable
+        )}
+      >
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <div className="relative flex flex-col">
+            <Navbar
+              mobileRoutes={manifest.mobileRoutes}
+              routes={manifest.routes}
+            />
+            {children}
+            <div
+              aria-hidden="true"
+              className="fixed hidden dark:md:block dark:opacity-70 -bottom-[40%] -left-[20%] z-0"
+            >
+              <Image
+                removeWrapper
+                alt="docs left background"
+                src="/gradients/docs-left.png"
+              />
+            </div>
+            <div
+              aria-hidden="true"
+              className="fixed hidden dark:md:block dark:opacity-70 -top-[80%] -right-[60%] 2xl:-top-[60%] 2xl:-right-[45%] z-0 rotate-12"
+            >
+              <Image
+                removeWrapper
+                alt="docs right background"
+                src="/gradients/docs-right.png"
+              />
+            </div>
+            <Footer />
+          </div>
+        </Providers>
+      </body>
+    </html>
+  );
 }
