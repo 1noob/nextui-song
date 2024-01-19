@@ -58,7 +58,7 @@ export default function RootLayout({
           fontMono.variable
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "system"}}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "system" }}>
           <div className="relative flex flex-col">
             <Navbar
               mobileRoutes={manifest.mobileRoutes}
