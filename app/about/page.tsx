@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { allPages } from "contentlayer/generated";
+import { allBlogs, allPages } from "contentlayer/generated";
 import dynamic from "next/dynamic";
 
 const MDXContent = dynamic(
@@ -62,6 +62,12 @@ export async function generateMetadata({
       creator: siteConfig.creator,
     },
   };
+}
+
+export async function generateStaticParams(): Promise<AboutPageProps["params"][]> {
+  return allPages.map((doc) => ({
+    slug: doc.slugAsParams,
+  }));
 }
 
 export default async function AboutPage({ params }: AboutPageProps) {

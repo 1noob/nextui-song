@@ -68,9 +68,10 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.23.3",
+    "encoding": "^0.1.13",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.0.4",
-    "encoding": "^0.1.13",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13"
   }

@@ -59,7 +59,9 @@ export default function RootLayout({
               mobileRoutes={manifest.mobileRoutes}
               routes={manifest.routes}
             />
-            {children}
+            <main className="relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100vh_-_64px_-_108px)] mb-6 flex-grow">
+              {children}
+            </main>
             <div
               aria-hidden="true"
               className="fixed hidden dark:md:block dark:opacity-70 -bottom-[40%] -left-[20%] z-0"
