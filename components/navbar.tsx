@@ -95,7 +95,12 @@ export const Navbar: FC<NavbarProps> = ({
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
+          <NextLink
+            aria-label="Home"
+            className="flex justify-start items-center gap-2 tap-highlight-transparent transition-opacity active:opacity-50"
+            href="/"
+            onClick={() => handlePressNavbarItem("Home", "/")}
+          >
             <p className="font-bold text-inherit">SONG</p>
           </NextLink>
         </NavbarBrand>

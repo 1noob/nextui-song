@@ -35,6 +35,11 @@ export const metadata: Metadata = {
   },
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
+  appleWebApp: {
+    capable: true,
+    title: "Song",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 export default function RootLayout({
