@@ -153,7 +153,7 @@ export const Navbar: FC<NavbarProps> = ({
           <Link isExternal href={siteConfig.links.github} aria-label="Github">
             <GithubIcon className="text-default-500" />
           </Link>
-          <ThemeSwitch />
+          <ThemeSwitch className={"hidden lg:flex"}/>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarMenuToggle
@@ -173,9 +173,6 @@ export const Navbar: FC<NavbarProps> = ({
           <Link isExternal href={siteConfig.links.github} aria-label="Github">
             <GithubIcon className="text-default-500" />
           </Link>
-        </NavbarItem>
-        <NavbarItem className="flex h-full items-center">
-          <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="w-10 h-full">
           <NavbarMenuToggle

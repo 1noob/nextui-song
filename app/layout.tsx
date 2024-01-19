@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: siteConfig.openGraph,
   appleWebApp: {
     capable: true,
-    title: "Song",
+    title: "SONG",
     statusBarStyle: "black-translucent",
   },
 };
@@ -58,7 +58,7 @@ export default function RootLayout({
           fontMono.variable
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "system"}}>
           <div className="relative flex flex-col">
             <Navbar
               mobileRoutes={manifest.mobileRoutes}
