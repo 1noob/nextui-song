@@ -177,6 +177,7 @@ export const MDXComponents = {
   /**
    * NextUI components
    */
+  ...Components,
   ThemeSwitch,
   /**
    * Markdown components
