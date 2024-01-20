@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
   twitter: siteConfig.twitter,
@@ -54,7 +54,7 @@ export default function RootLayout({
       </head>
       <body
         className={clsx(
-          "min-h-screen bg-background font-mono antialiased",
+          "min-h-screen bg-background font-mono antialiased]",
           fontMono.variable
         )}
       >

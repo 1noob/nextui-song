@@ -78,7 +78,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
   }
   return (
     <>
-      <div className="col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16 mt-10">
+      <div className="col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16">
         <div className="w-full prose prose-neutral">
           <MDXContent code={doc.body.code} />
         </div>

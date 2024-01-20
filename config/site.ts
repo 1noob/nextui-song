@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "SONG",
   description: "Full stack engineer",
-  ogImage: "https://nextui.org/twitter-cards/nextui.jpeg",
+  ogImage: "/favicon.png",
   author: "Zhou SongJie",
   email: "zhouzhou.plays@gmail.com",
   siteUrl: "https://song.jackey.love",
@@ -30,7 +30,7 @@ export const siteConfig = {
     card: "summary_large_image",
     title: "SONG",
     description: "Full stack engineer",
-    image: "https://nextui.org/twitter-cards/nextui.jpeg",
+    image: "/favicon.png",
     creator: "@zhousongjie",
   },
   openGraph: {
@@ -41,7 +41,7 @@ export const siteConfig = {
     description: "Full stack engineer",
     images: [
       {
-        url: "https://nextui.org/twitter-cards/nextui.jpeg",
+        url: "/favicon.png",
         width: 1200,
         height: 630,
         alt: "SONG",

@@ -90,7 +90,7 @@ export default async function DocPage({ params }: BlogProps) {
   }
 
   return (
-    <div className="w-full mt-12 flex flex-col justify-start items-center prose prose-neutral">
+    <div className="w-full flex flex-col justify-start items-center prose prose-neutral">
       <div className="w-full max-w-4xl">
         <Link
           isBlock

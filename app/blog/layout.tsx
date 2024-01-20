@@ -5,7 +5,7 @@ interface BlogLayoutProps {
 export default function BlogLayout({ children }: BlogLayoutProps) {
   return (
     <>
-      <div className="grid">
+      <div className="grid my-12">
         {children}
       </div>
     </>

@@ -31,7 +31,7 @@ export const DocsPager: React.FC<FooterNavProps> = ({currentRoute}) => {
   };
 
   return (
-    <div className="flex w-full justify-between py-20">
+    <div className="flex w-full justify-between mt-12">
       {prevRoute ? (
         <Link
           isBlock
