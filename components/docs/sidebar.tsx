@@ -1,15 +1,21 @@
 "use client";
 
-import {FC} from "react";
-import {ChevronIcon} from "@nextui-org/shared-icons";
-import {CollectionBase, Expandable, MultipleSelection, Node, ItemProps} from "@react-types/shared";
-import {BaseItem} from "@nextui-org/aria-utils";
-import React, {useRef, useMemo} from "react";
-import {useFocusRing} from "@react-aria/focus";
-import {TreeState, useTreeState} from "@react-stately/tree";
-import {useSelectableCollection} from "@react-aria/selection";
-import {usePress} from "@react-aria/interactions";
-import {clsx, dataAttr} from "@nextui-org/shared-utils";
+import { FC } from "react";
+import { ChevronRightIcon } from "@nextui-org/shared-icons";
+import {
+  CollectionBase,
+  Expandable,
+  MultipleSelection,
+  Node,
+  ItemProps,
+} from "@react-types/shared";
+import { BaseItem } from "@nextui-org/aria-utils";
+import React, { useRef, useMemo } from "react";
+import { useFocusRing } from "@react-aria/focus";
+import { TreeState, useTreeState } from "@react-stately/tree";
+import { useSelectableCollection } from "@react-aria/selection";
+import { usePress } from "@react-aria/interactions";
+import { clsx, dataAttr } from "@nextui-org/shared-utils";
 import {
   SpacerProps,
   Spacer,
@@ -18,16 +24,16 @@ import {
   dataFocusVisibleClasses,
 } from "@nextui-org/react";
 import Link from "next/link";
-import {isEmpty} from "lodash";
-import {usePathname, useRouter} from "next/navigation";
+import { isEmpty } from "lodash";
+import { usePathname, useRouter } from "next/navigation";
 
-import {ScrollArea} from "../scroll-area";
+import { ScrollArea } from "../scroll-area";
 
-import {getRoutePaths} from "./utils";
+import { getRoutePaths } from "./utils";
 
-import {Route} from "@/libs/docs/page";
-import {TreeKeyboardDelegate} from "@/utils/tree-keyboard-delegate";
-import {trackEvent} from "@/utils/va";
+import { Route } from "@/libs/docs/page";
+import { TreeKeyboardDelegate } from "@/utils/tree-keyboard-delegate";
+import { trackEvent } from "@/utils/va";
 
 export interface Props<T> extends Omit<ItemProps<T>, "title">, Route {
   slug?: string;
@@ -36,7 +42,9 @@ export interface Props<T> extends Omit<ItemProps<T>, "title">, Route {
 
 export type BaseItemProps<T extends object> = Props<T>;
 
-const Item = BaseItem as <T extends object>(props: BaseItemProps<T>) => JSX.Element;
+const Item = BaseItem as <T extends object>(
+  props: BaseItemProps<T>
+) => JSX.Element;
 
 /**
  * @internal
@@ -56,8 +64,8 @@ const spacesByLevel: Record<number, SpacerProps["x"]> = {
 };
 
 function TreeItem<T>(props: TreeItemProps<T>) {
-  const {item, state, level = 1, spaceLeft = 0} = props;
-  const {key, rendered, childNodes} = item;
+  const { item, state, level = 1, spaceLeft = 0 } = props;
+  const { key, rendered, childNodes } = item;
 
   const router = useRouter();
   const pathname = usePathname();
@@ -85,7 +93,7 @@ function TreeItem<T>(props: TreeItemProps<T>) {
 
   const Component = hasChildNodes ? "ul" : "li";
 
-  const {pressProps} = usePress({
+  const { pressProps } = usePress({
     onPress: () => {
       if (hasChildNodes) {
         state.toggleKey(item.key);
@@ -101,7 +109,7 @@ function TreeItem<T>(props: TreeItemProps<T>) {
     },
   });
 
-  const {focusProps, isFocused, isFocusVisible} = useFocusRing();
+  const { focusProps, isFocused, isFocusVisible } = useFocusRing();
 
   return (
     <Component
@@ -110,11 +118,11 @@ function TreeItem<T>(props: TreeItemProps<T>) {
       aria-expanded={dataAttr(hasChildNodes ? isExpanded : undefined)}
       aria-selected={dataAttr(isSelected)}
       className={clsx(
-        "flex flex-col gap-3outline-none w-full tap-highlight-transparent",
+        "flex flex-col gap-3 outline-none w-full tap-highlight-transparent",
 
-        hasChildNodes ? "mb-4" : "first:mt-4",
+        hasChildNodes ? "mb-4" : "",
         // focus ring
-        ...dataFocusVisibleClasses,
+        ...dataFocusVisibleClasses
       )}
       data-focus-visible={isFocusVisible}
       data-focused={isFocused}
@@ -124,12 +132,12 @@ function TreeItem<T>(props: TreeItemProps<T>) {
         <Spacer x={spaceLeft} />
         {hasChildNodes ? (
           <span className="flex items-center gap-3">
-            <span>{rendered}</span>
-            <ChevronIcon
+            <ChevronRightIcon
               className={clsx("transition-transform", {
-                "-rotate-90": isExpanded,
+                "rotate-90": isExpanded,
               })}
             />
+            <span>{rendered}</span>
           </span>
         ) : (
           <NextUILink
@@ -143,7 +151,7 @@ function TreeItem<T>(props: TreeItemProps<T>) {
               "before:bg-default-300",
               "before:w-1",
               "before:h-1",
-              "before:rounded-full",
+              "before:rounded-full"
             )}
             color="foreground"
             href={paths.pathname}
@@ -155,7 +163,7 @@ function TreeItem<T>(props: TreeItemProps<T>) {
                   : "opacity-80 dark:opacity-60",
                 {
                   "pointer-events-none": item.props?.comingSoon,
-                },
+                }
               )}
             >
               {rendered}
@@ -171,12 +179,22 @@ function TreeItem<T>(props: TreeItemProps<T>) {
               </Chip>
             )}
             {isNew && (
-              <Chip className="ml-1 py-1 text-tiny" color="primary" size="sm" variant="flat">
+              <Chip
+                className="ml-1 py-1 text-tiny"
+                color="primary"
+                size="sm"
+                variant="flat"
+              >
                 New
               </Chip>
             )}
             {item.props?.comingSoon && (
-              <Chip className="ml-1 py-1 text-tiny" color="default" size="sm" variant="flat">
+              <Chip
+                className="ml-1 py-1 text-tiny"
+                color="default"
+                size="sm"
+                variant="flat"
+              >
                 Coming soon
               </Chip>
             )}
@@ -186,7 +204,7 @@ function TreeItem<T>(props: TreeItemProps<T>) {
         <Spacer x={4} />
       </div>
       {isExpanded && hasChildNodes && (
-        <div className="flex flex-col gap-3 items-start" role="group">
+        <div className="flex flex-col gap-1 items-start" role="group">
           {[...childNodes].map((item) => {
             return (
               <TreeItem
@@ -205,11 +223,13 @@ function TreeItem<T>(props: TreeItemProps<T>) {
   );
 }
 
-function TreeHeading({item}: {item: any}) {
+function TreeHeading({ item }: { item: any }) {
   return <div>{item.rendered}</div>;
 }
 
-function Tree<T extends object>(props: CollectionBase<T> & Expandable & MultipleSelection) {
+function Tree<T extends object>(
+  props: CollectionBase<T> & Expandable & MultipleSelection
+) {
   let state = useTreeState(props);
 
   let ref = useRef<HTMLDivElement>(null);
@@ -217,10 +237,10 @@ function Tree<T extends object>(props: CollectionBase<T> & Expandable & Multiple
   let keyboardDelegate = useMemo(
     // @ts-expect-error
     () => new TreeKeyboardDelegate(state.collection, state.disabledKeys),
-    [state.collection, state.disabledKeys],
+    [state.collection, state.disabledKeys]
   );
 
-  let {collectionProps} = useSelectableCollection({
+  let { collectionProps } = useSelectableCollection({
     ref,
     selectionManager: state.selectionManager,
     keyboardDelegate,
@@ -251,7 +271,12 @@ export interface DocsSidebarProps {
   className?: string;
 }
 
-export const DocsSidebar: FC<DocsSidebarProps> = ({routes, slug, tag, className}) => {
+export const DocsSidebar: FC<DocsSidebarProps> = ({
+  routes,
+  slug,
+  tag,
+  className,
+}) => {
   const expandedKeys = routes?.reduce((keys, route) => {
     if (route.defaultOpen) {
       keys.push(route.key as string);
@@ -261,7 +286,7 @@ export const DocsSidebar: FC<DocsSidebarProps> = ({routes, slug, tag, className}
   }, [] as string[]);
 
   return (
-    <div className={clsx("lg:fixed lg:top-20 mt-2 z-0 lg:h-[calc(100vh-121px)]", className)}>
+    <div className={clsx("lg:fixed z-0 lg:h-[calc(100vh-121px)]", className)}>
       <Tree defaultExpandedKeys={expandedKeys} items={routes || []}>
         {(route) => (
           <Item

@@ -2,15 +2,57 @@
   "routes": [
     {
       "key": "acm",
-      "title": "ACM",
-      "defaultOpen": false,
+      "title": "ACM-ICPC",
+      "defaultOpen": true,
       "keywords": "acm",
       "routes": [
         {
           "key": "string",
-          "title": "字符串",
-          "keywords": "string",
-          "path": "/docs/acm/string.mdx"
+          "title": "String",
+          "routes": [
+            {
+              "key": "problem",
+              "title": "Problem",
+              "path": "/docs/acm/string/problem.mdx"
+            },
+            {
+              "key": "algorithm",
+              "title": "Algorithm",
+              "path": "/docs/acm/string/algorithm.mdx"
+            }
+          ]
+        },
+        {
+          "key": "graph",
+          "title": "Graph",
+          "routes": [
+            {
+              "key": "problem",
+              "title": "Problem",
+              "path": "/docs/acm/graph/problem.mdx"
+            },
+            {
+              "key": "algorithm",
+              "title": "Algorithm",
+              "path": "/docs/acm/graph/algorithm.mdx"
+            }
+          ]
+        },
+        {
+          "key": "data-structure",
+          "title": "Data Structure",
+          "routes": [
+            {
+              "key": "problem",
+              "title": "Problem",
+              "path": "/docs/acm/data-structure/problem.mdx"
+            },
+            {
+              "key": "algorithm",
+              "title": "Algorithm",
+              "path": "/docs/acm/data-structure/algorithm.mdx"
+            }
+          ]
         }
       ]
     }

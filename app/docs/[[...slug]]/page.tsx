@@ -101,7 +101,7 @@ export default async function DocPage({ params }: DocPageProps) {
         {currentRoute && <DocsPager currentRoute={currentRoute} />}
       </div>
       {headings && headings.length > 0 && (
-        <div className="hidden z-10 xl:flex xl:col-span-2 mt-8 pl-4">
+        <div className="hidden z-10 xl:flex xl:col-span-2 pt-4 pl-4">
           <DocsToc headings={headings} />
         </div>
       )}

@@ -1,0 +1,125 @@
+---
+title: 最短路算法
+date: 2019-12-24
+---
+
+# 最短路算法
+
+---
+
+## 链式前向星
+
+这是一个 acm 比赛里比较喜欢的一个建图结构，原理是尾插法，使用 Head 数组保存一条边的源点 u
+
+<Codeblock
+  codeString={`struct node {
+    int v,w,next;
+} edge[MAX_E];
+  
+  int Head[MAX_N];
+  int top;
+  
+  void init(){
+      top = 0;
+      memset(Head,-1,sizeof Head);
+  }
+  
+  void addEdge(int u,int v,int w) {
+      edge[top].v = v;
+      edge[top].w = w;
+      edge[top].next = Head[u];
+      Head[u] = top++;
+  }`}
+  language="cpp"
+/>
+遍历以 u 为源点的一条边的：
+
+<Codeblock
+  codeString={`for(int i = Head[u]; ~i; i = edge[i].next){}`}
+  showLines={false}
+  language={"cpp"}
+/>
+
+---
+
+## Dijkstra
+
+<Codeblock
+  codeString={`#define pa pair<int,int>
+int dis[MAX_N];
+
+void dijkstra(){
+    //first 为距离，second 为顶点，优先队列每次取出最短距离的节点（堆优化）
+    priority_queue<pa,vector<pa>,greater<pa> >q;
+    memset(dis,INF,sizeof dis);
+    dis[s]=0;
+    q.push(make_pair(0,1));
+    while (!q.empty()){
+        int u=q.top().second; q.pop();
+        for (int i=head[u];~i;i=edge[i].next)
+            if (dis[u]+edge[i].w<dis[edge[i].v])
+            {
+                dis[edge[i].v]=dis[u]+edge[i].w;
+                q.push(make_pair(dis[edge[i].v],edge[i].v));
+            }
+    }
+}`}
+  language="cpp"
+/>
+
+---
+
+## Floyd
+
+<Codeblock
+  codeString={`void floyd(int n){
+for (int k = 0; k < n; k++) {
+    for (int v = 0; v < n; v++) {
+        for (int w = 0; w < n; w++) {
+            if (d[v][w] > d[v][k] + d[k][w]) {
+                d[v][w] = d[v][k] + d[k][w];
+                p[v][w] = p[v][k]; // p[v][w] 是 v-w 最短路径上 v 的下一顶点
+            }
+        }
+    }
+}
+}`}
+language={"cpp"}
+/>
+
+---
+
+## SPFA
+
+<Codeblock
+  codeString={`struct node {
+int v,w,next;
+} edge[MAX_E] ;
+
+int Head[MAX_N];
+int dis[MAX_N];
+bool vis[MAX_N];
+
+void SPFA(int s) {
+    stack<int> Q;
+    memset(dis,INF,sizeof dis);
+    memset(vis,false,sizeof vis);
+    dis[s] = 0 ; vis[s]=true;
+    Q.push(s);
+    while(!Q.empty()) {
+        int u = Q.top(); Q.pop();
+        for(int i = Head[u]; ~i; i = edge[i].next) {
+            int v = edge[i].v;
+            if(dis[v]>dis[u]+edge[i].w) {
+                dis[v] = dis[u]+edge[i].w;
+                if(!vis[v]) {
+                    vis[v]=true;
+                    Q.push(v);
+                }
+            }
+        }
+        vis[u] = false;
+    }
+}`}
+  language={"cpp"}
+/>

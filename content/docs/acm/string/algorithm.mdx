@@ -1,0 +1,36 @@
+---
+title: 字符串处理算法
+date: 2019-12-24
+---
+
+# 字符串算法
+
+---
+
+## KMP
+
+<Codeblock
+ codeString={`int next[N],ls,lw;
+void get_next(char* p){
+   memset(next,0,sizeof next);
+   for(int i=1;i<lw;i++){
+       int j=next[i];
+       while(j && p[i]!=p[j])
+           j=next[j];
+       next[i+1]=(p[i]==p[j])?j+1:0;
+   }
+}
+
+int KMP(char* w,char* s){
+   int ans=0, j=0;
+   // 对单词 w 进行预处理
+   get_next(w);
+   for(int i=0;i<ls;i++){
+       while(j && s[i]!=w[j]) j=next[j];
+       if(s[i]==w[j]) j++;
+       if(j==lw) ans++;
+   }
+   return ans;
+}`}
+ language={"cpp"}
+/>
