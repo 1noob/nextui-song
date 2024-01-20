@@ -2,10 +2,10 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "SONG",
-  description: "Full stack engineer",
+  description: "full stack engineer",
   ogImage: "/apple-touch-icon.jpeg",
   author: "Zhou SongJie",
-  email: "zhouzhou.plays@gmail.com",
+  email: "song@jackey.love",
   siteUrl: "https://song.jackey.love",
   creator: "@zhousongjie",
   navItems: [
@@ -29,7 +29,7 @@ export const siteConfig = {
   twitter: {
     card: "summary_large_image",
     title: "SONG",
-    description: "Full stack engineer",
+    description: "full stack engineer",
     image: "/apple-touch-icon.jpeg",
     creator: "@zhousongjie",
   },
@@ -38,7 +38,7 @@ export const siteConfig = {
     locale: "en_US",
     url: "https://song.jackey.love",
     siteName: "SONG",
-    description: "Full stack engineer",
+    description: "full stack engineer",
     images: [
       {
         url: "/apple-touch-icon.jpeg",
