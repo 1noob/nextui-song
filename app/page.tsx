@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div className={"flex grid gap-4 mt-4 mb-12"}>
         <div className={"my-auto overflow-hidden w-full grid"}>
-          <div className="flex animate-[scy_60s_linear_infinite] w-max content-center">
+          <div className="flex animate-[scy_30s_linear_infinite] w-max content-center">
             <GitHubCalendar className={"min-w-[844px]"} username="1noob" hideTotalCount/>
             <Image
               className={"max-w-[380px]"}
