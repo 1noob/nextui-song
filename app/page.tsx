@@ -6,21 +6,25 @@ export default function Home() {
     <>
       <div className={"flex grid gap-4 mt-4 mb-12"}>
         <div className={"my-auto overflow-hidden w-full grid"}>
-          <div className="flex animate-[scy_30s_linear_infinite] w-max content-center">
-            <GitHubCalendar className={"min-w-[844px]"} username="1noob" hideTotalCount/>
+          <div className="flex animate-[scy_30s_linear_infinite] w-max content-center gap-4">
+            <GitHubCalendar className={"min-w-[844px]"} username="1noob" blockSize={16}/>
             <Image
-              className={"max-w-[380px]"}
+              className={"max-w-[810px]"}
               src={
-                "https://github-graph.1noob.vercel.app/graph?username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=450"
+                "https://github-graph.1noob.vercel.app/graph" +
+                "?username=1noob&theme=github-compact&hide_border=true&height=300" +
+                "&custom_title=Over%20the%20past%20month"
               }
               radius={"none"}
               shadow={"none"}
             />
-            <GitHubCalendar className={"min-w-[844px]"} username="1noob" hideTotalCount/>
+            <GitHubCalendar className={"min-w-[844px]"} username="1noob" blockSize={16}/>
             <Image
-              className={"max-w-[380px]"}
+              className={"max-w-[810px]"}
               src={
-                "https://github-graph.1noob.vercel.app/graph?username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=450"
+                "https://github-graph.1noob.vercel.app/graph" +
+                "?username=1noob&theme=github-compact&hide_border=true&height=300" +
+                "&custom_title=Over%20the%20past%20month"
               }
               radius={"none"}
               shadow={"none"}
