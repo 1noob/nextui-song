@@ -271,6 +271,14 @@ module.exports = {
         },
       }),
       keyframes: {
+        scy: {
+          "0%": {
+            transform: "translate(0%, 0px)",
+          },
+          "100%": {
+            transform: "translate(-50%, 0px)",
+          },
+        },
         heartbeat: {
           "0%": {transform: "scale(1)"},
           "50%": {transform: "scale(1.2)"},
