@@ -4,7 +4,7 @@ import { Card, CardBody, Image, ScrollShadow } from "@nextui-org/react";
 export default function Home() {
   return (
     <>
-      <div className={"grid w-full my-12"}>
+      <div className={"w-full flex flex-col justify-start items-center my-12"}>
         <div className="text-center">
           <h1 className="mb-2 font-bold text-4xl">Hello</h1>
           <h5 className="text-default-500 text-lg">

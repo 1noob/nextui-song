@@ -97,7 +97,7 @@ export default async function DocPage({ params }: BlogProps) {
           as={NextLink}
           className="mb-8 -ml-3 text-default-500 hover:text-default-900"
           color="foreground"
-          href="/blog"
+          href={"/blog"}
           size="sm"
         >
           <ChevronRightLinearIcon
