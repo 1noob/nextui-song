@@ -1,10 +1,10 @@
 {
   "routes": [
     {
-      "key": "acm",
+      "key": "acm-icpc",
       "title": "ACM-ICPC",
       "defaultOpen": true,
-      "keywords": "acm",
+      "keywords": "acm icpc",
       "routes": [
         {
           "key": "string",
@@ -53,6 +53,19 @@
               "path": "/docs/acm/data-structure/algorithm.mdx"
             }
           ]
+        }
+      ]
+    },
+    {
+      "key": "404",
+      "title": "404",
+      "defaultOpen": false,
+      "keywords": "404 Not Found",
+      "routes": [
+        {
+          "key": "notfound",
+          "title": "Not Found",
+          "path": "/docs/acm/404/notfound.mdx"
         }
       ]
     }
