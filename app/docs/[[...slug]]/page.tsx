@@ -94,7 +94,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
   return (
     <>
-      <div className="col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16 my-12">
+      <div className="col-span-12 lg:col-span-10 flex flex-col justify-start items-center xl:col-span-8 lg:px-16 my-12">
         <div className="w-full prose prose-neutral">
           <MDXContent code={doc.body.code} />
         </div>
