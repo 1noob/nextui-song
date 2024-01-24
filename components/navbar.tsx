@@ -131,6 +131,17 @@ export const Navbar: FC<NavbarProps> = ({
             <NextLink
               className={navLinkClasses}
               color="foreground"
+              data-active={includes(pathname, "project")}
+              href="/project"
+              onClick={() => handlePressNavbarItem("Project", "/project")}
+            >
+              Project
+            </NextLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NextLink
+              className={navLinkClasses}
+              color="foreground"
               data-active={includes(pathname, "about")}
               href="/about"
               onClick={() => handlePressNavbarItem("About", "/about")}

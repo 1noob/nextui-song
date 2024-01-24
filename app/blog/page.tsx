@@ -11,10 +11,10 @@ export default function Blog() {
     <div className="w-full">
       <div className="text-center">
         <h1 className="mb-2 font-bold text-4xl">
-          Personal Project Latest Updates
+          Welcome To My Blog
         </h1>
         <h5 className="text-default-500 text-lg">
-          All the latest job about me.
+          All the latest learning about me.
         </h5>
       </div>
       <BlogList posts={posts} />
