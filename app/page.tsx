@@ -32,8 +32,16 @@ export default function Home() {
           <div className={"hidden lg:flex col-span-3"}>
             <Image
               src={
-                "https://github-graph.1noob.vercel.app/graph?" +
+                "https://github.jackey.love/graph?" +
                 "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=300"
+              }
+            />
+          </div>
+          <div className={"flex lg:hidden w-full"}>
+            <Image
+              src={
+                "https://github.jackey.love/graph?" +
+                "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=600"
               }
             />
           </div>
