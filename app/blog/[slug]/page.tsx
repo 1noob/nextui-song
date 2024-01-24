@@ -93,8 +93,32 @@ export default async function DocPage({ params }: BlogProps) {
     <div className="w-full flex flex-col justify-start items-center prose prose-neutral">
       <div className="w-full max-w-4xl">
         <MDXContent code={post.body.code} />
-        <div className={"w-full flex flex-row flex-nowrap justify-between mt-12"}>
-          <div className="grid content-end">
+        <div className="flex mt-12 grid grid-cols-1 gap-3">
+          <div className="flex w-full flex-col items-start">
+            <User
+              isExternal
+              as={Link}
+              avatarProps={{
+                className: "w-9 h-9 text-large",
+                src: post.author?.avatar,
+              }}
+              className="hover:opacity-100"
+              classNames={{
+                base: "-ml-2 px-2 py-1.5 hover:bg-default-100 dark:hover:bg-default-50 cursor-pointer transition-colors",
+                name: "text-foreground",
+              }}
+              description={post.author?.username}
+              href={post.author?.link}
+              name={post.author?.name}
+            />
+          </div>
+          <time
+            className="block text-small text-default-500 items-end py-1"
+            dateTime={post.date}
+          >
+            {format(parseISO(post.date), "LLLL d, yyyy")}
+          </time>
+          <div className={"flex"}>
             <Link
               isBlock
               as={NextLink}
@@ -110,32 +134,7 @@ export default async function DocPage({ params }: BlogProps) {
               Back to blog
             </Link>
           </div>
-          <div className="justify-end">
-            <div className="flex w-full flex-col items-start">
-              <User
-                isExternal
-                as={Link}
-                avatarProps={{
-                  className: "w-9 h-9 text-large",
-                  src: post.author?.avatar,
-                }}
-                className="hover:opacity-100"
-                classNames={{
-                  base: "-ml-2 px-2 py-1.5 hover:bg-default-100 dark:hover:bg-default-50 cursor-pointer transition-colors",
-                  name: "text-foreground",
-                }}
-                description={post.author?.username}
-                href={post.author?.link}
-                name={post.author?.name}
-              />
-            </div>
-            <time
-              className="block text-small text-default-500 items-end py-1"
-              dateTime={post.date}
-            >
-              {format(parseISO(post.date), "LLLL d, yyyy")}
-            </time>
-          </div>
+
         </div>
       </div>
     </div>
