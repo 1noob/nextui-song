@@ -1,5 +1,5 @@
 import GitHubCalendar from "react-github-calendar";
-import { Card, CardBody, Image, ScrollShadow } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 
 export default function Home() {
   return (

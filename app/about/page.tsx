@@ -82,6 +82,14 @@ export default async function AboutPage({ params }: AboutPageProps) {
     <>
       <div className="w-full prose prose-neutral">
         <MDXContent code={doc.body.code} />
+        <iframe
+          className={"mt-10 w-full rounded-xl"}
+          allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+          scrolling="no"
+          frameBorder="0"
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+          src="https://embed.music.apple.com/tr/album/trick-or-trip/1628728683?i=1628728903"
+        />
       </div>
     </>
   );
