@@ -12,38 +12,66 @@ export default function Home() {
             and bleed.
           </h5>
         </div>
-        <div className={"flex grid lg:grid-cols-4 mt-10"}>
-          <div className={"overflow-hidden w-full"}>
-            <div className="flex animate-[scy_30s_linear_infinite] w-max">
-              <GitHubCalendar
-                username="1noob"
-                blockSize={24}
-                hideColorLegend={true}
-                hideTotalCount={true}
-              />
-              <GitHubCalendar
-                username="1noob"
-                blockSize={24}
-                hideColorLegend={true}
-                hideTotalCount={true}
+        <div className={"hidden lg:flex"}>
+          <div className={"flex grid grid-cols-5 mt-10"}>
+            <div className={"overflow-hidden w-full grid content-center"}>
+              <div className="flex animate-[scy_30s_linear_infinite] w-max">
+                <GitHubCalendar
+                  username="1noob"
+                  blockSize={24}
+                  hideColorLegend={true}
+                  hideTotalCount={true}
+                />
+                <GitHubCalendar
+                  username="1noob"
+                  blockSize={24}
+                  hideColorLegend={true}
+                  hideTotalCount={true}
+                />
+              </div>
+            </div>
+            <div className={"flex grid col-span-4 content-center"}>
+              <Image
+                src={
+                  "https://github.jackey.love/graph?" +
+                  "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=340"
+                }
               />
             </div>
           </div>
-          <div className={"hidden lg:flex col-span-3"}>
-            <Image
-              src={
-                "https://github.jackey.love/graph?" +
-                "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=300"
-              }
-            />
-          </div>
-          <div className={"flex lg:hidden w-full"}>
-            <Image
-              src={
-                "https://github.jackey.love/graph?" +
-                "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=600"
-              }
-            />
+        </div>
+        <div className={"grid flex lg:hidden w-full"}>
+          <div className={"overflow-hidden w-full"}>
+            <div className="flex animate-[scy_60s_linear_infinite] w-max">
+              <div className={"content-center grid"}>
+                <GitHubCalendar
+                  username="1noob"
+                  blockSize={24}
+                  hideColorLegend={true}
+                  hideTotalCount={true}
+                />
+              </div>
+              <Image
+                src={
+                  "https://github.jackey.love/graph?" +
+                  "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=300"
+                }
+              />
+              <div className={"content-center grid"}>
+                <GitHubCalendar
+                  username="1noob"
+                  blockSize={24}
+                  hideColorLegend={true}
+                  hideTotalCount={true}
+                />
+              </div>
+              <Image
+                src={
+                  "https://github.jackey.love/graph?" +
+                  "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=300"
+                }
+              />
+            </div>
           </div>
         </div>
       </div>
