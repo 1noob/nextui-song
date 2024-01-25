@@ -34,7 +34,8 @@ export default function Project() {
             <CardBody className="overflow-visible px-4">
               <Link href={props.url}>
                 <Image
-                  className={"border dark:brightness-75"}
+                  radius={"sm"}
+                  className={"border-1 dark:border-0 dark:brightness-75"}
                   src={props.image}
                 />
               </Link>

@@ -16,11 +16,11 @@ body {
 }
 
 .dot-background {
-  background: linear-gradient(185deg, hsla(0, 0%, 100%, 0), #fff 300px), fixed 0 0 /10px 10px radial-gradient(#d1d1d1 1px, transparent 0)
+  background: linear-gradient(185deg, hsla(0, 0%, 100%, 0), #fff 600px), fixed 0 0 /10px 10px radial-gradient(#d1d1d1 1px, transparent 0)
 }
 
 .dark .dot-background {
-  background:linear-gradient(185deg, transparent, #000 300px), fixed 0 0 /10px 10px radial-gradient(#313131 1px, transparent 0)
+  background:linear-gradient(185deg, transparent, #000 600px), fixed 0 0 /10px 10px radial-gradient(#313131 1px, transparent 0)
 }
 
 .dot-background {
