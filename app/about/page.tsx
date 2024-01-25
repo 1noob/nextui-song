@@ -80,10 +80,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
   }
   return (
     <>
-      <div className="w-full prose prose-neutral">
+      <div className="w-full prose prose-neutral grid gap-10">
         <MDXContent code={doc.body.code} />
         <iframe
-          className={"mt-10 w-full rounded-xl"}
+          className={"w-full rounded-xl h-[175px]"}
           allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
           scrolling="no"
           frameBorder="0"
