@@ -88,7 +88,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
           scrolling="no"
           frameBorder="0"
           sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/tr/album/trick-or-trip/1628728683?i=1628728903"
+          src="https://embed.music.apple.com/cn/album/%E5%B9%B2%E6%9D%AF/1081297124?i=1081297130"
         />
       </div>
     </>
