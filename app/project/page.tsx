@@ -8,14 +8,7 @@ import {
 } from "@nextui-org/react";
 
 import data from "@/config/project.json";
-
-interface ProjectProps {
-  domain: string;
-  title: string;
-  url: string;
-  source: string;
-  image: string;
-}
+import NextLink from "next/link";
 
 export default function Project() {
   return (
@@ -29,24 +22,26 @@ export default function Project() {
         </h5>
       </div>
       <div className="mt-10 grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
-        {data.project.map((ProjectProps, idx) => (
-          <Card key={idx} className="pt-4 gap-2">
+        {data.project.map((props, idx) => (
+          <Card
+            isBlurred
+            className="p-2 h-full w-full border-transparent text-start bg-white/5 dark:bg-default-400/10 backdrop-blur-lg backdrop-saturate-[1.8]"
+            key={idx}
+          >
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-              <h4 className="font-bold text-large">{ProjectProps.title}</h4>
+              <h4 className="font-bold text-large">{props.title}</h4>
             </CardHeader>
-            <CardBody className="overflow-visible">
-              <Link href={"https://song.jackey.love"}>
+            <CardBody className="overflow-visible px-4">
+              <Link href={props.url}>
                 <Image
-                  className={"border dark:brightness-90"}
-                  src={ProjectProps.image}
+                  className={"border dark:brightness-75"}
+                  src={props.image}
                 />
               </Link>
             </CardBody>
             <CardFooter className={"pt-2 px-4 flex-col items-start"}>
-              <p className="text-tiny uppercase font-bold">
-                {ProjectProps.domain}
-              </p>
-              <Link isExternal showAnchorIcon href={ProjectProps.source}>
+              <p className="text-tiny uppercase font-bold">{props.domain}</p>
+              <Link isExternal showAnchorIcon href={props.source}>
                 <small>Visit source code on GitHub.</small>
               </Link>
             </CardFooter>
