@@ -7,7 +7,17 @@ import {
   Link,
 } from "@nextui-org/react";
 
-export default function Blog() {
+import data from "@/config/project.json";
+
+interface ProjectProps {
+  domain: string;
+  title: string;
+  url: string;
+  source: string;
+  image: string;
+}
+
+export default function Project() {
   return (
     <div className="w-full">
       <div className="text-center">
@@ -19,58 +29,29 @@ export default function Blog() {
         </h5>
       </div>
       <div className="mt-10 grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
-        <Card className="pt-4 gap-2">
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-            <h4 className="font-bold text-large">Personal Website</h4>
-          </CardHeader>
-          <CardBody className="overflow-visible">
-            <Link href={"https://song.jackey.love"}>
-              <Image
-                className={"border dark:brightness-90"}
-                src={
-                  "https://screenshot.jackey.love?url=https://song.jackey.love"
-                }
-              />
-            </Link>
-          </CardBody>
-          <CardFooter className={"pt-2 px-4 flex-col items-start"}>
-            <p className="text-tiny uppercase font-bold">song.jackey.love</p>
-            <Link
-              isExternal
-              showAnchorIcon
-              href="https://github.com/1noob/song.jackey.love"
-            >
-              <small>Visit source code on GitHub.</small>
-            </Link>
-          </CardFooter>
-        </Card>
-        <Card className="pt-4 gap-2">
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-            <h4 className="font-bold text-large">Genshin Impact Launch!</h4>
-          </CardHeader>
-          <CardBody className="overflow-visible py-3">
-            <Link href={"https://genshin.1noob.vercel.app"}>
-              <Image
-                className={"border dark:brightness-90"}
-                src={
-                  "https://screenshot.jackey.love?url=https://genshin.1noob.vercel.app"
-                }
-              />
-            </Link>
-          </CardBody>
-          <CardFooter className={"pt-2 px-4 flex-col items-start"}>
-            <p className="text-tiny uppercase font-bold">
-              genshin.1noob.vercel.app
-            </p>
-            <Link
-              isExternal
-              showAnchorIcon
-              href="https://github.com/1noob/www-ginshin"
-            >
-              <small>Visit source code on GitHub.</small>
-            </Link>
-          </CardFooter>
-        </Card>
+        {data.project.map((ProjectProps, idx) => (
+          <Card key={idx} className="pt-4 gap-2">
+            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+              <h4 className="font-bold text-large">{ProjectProps.title}</h4>
+            </CardHeader>
+            <CardBody className="overflow-visible">
+              <Link href={"https://song.jackey.love"}>
+                <Image
+                  className={"border dark:brightness-90"}
+                  src={ProjectProps.image}
+                />
+              </Link>
+            </CardBody>
+            <CardFooter className={"pt-2 px-4 flex-col items-start"}>
+              <p className="text-tiny uppercase font-bold">
+                {ProjectProps.domain}
+              </p>
+              <Link isExternal showAnchorIcon href={ProjectProps.source}>
+                <small>Visit source code on GitHub.</small>
+              </Link>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   );

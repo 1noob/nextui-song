@@ -1,8 +1,18 @@
 {
   "project": [
     {
-      "name": "Personal Website",
-      "url": "https://song.jackey.love"
+      "domain": "song.jackey.love",
+      "title": "Personal Website",
+      "url": "https://song.jackey.love",
+      "source": "https://github.com/1noob/song.jackey.love",
+      "image": "https://screenshot.jackey.love?url=https://song.jackey.love"
+    },
+    {
+      "domain": "genshin.1noob.vercel.app",
+      "title": "Genshin Impact, Launch!",
+      "url": "https://genshin.1noob.vercel.app",
+      "source": "https://github.com/1noob/www-genshin",
+      "image": "https://screenshot.jackey.love?url=https://genshin.1noob.vercel.app"
     }
   ]
 }
