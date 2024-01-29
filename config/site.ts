@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "SONG",
   description: "full stack engineer",
-  ogImage: "/apple-touch-icon.jpeg",
+  ogImage: "/open-graph-image.jpeg",
   author: "Zhou SongJie",
   email: "song@jackey.love",
   siteUrl: "https://song.jackey.love",
@@ -30,7 +30,7 @@ export const siteConfig = {
     card: "summary_large_image",
     title: "SONG",
     description: "full stack engineer",
-    image: "/apple-touch-icon.jpeg",
+    image: "/open-graph-image.jpeg",
     creator: "@zhousongjie",
   },
   openGraph: {
@@ -41,7 +41,7 @@ export const siteConfig = {
     description: "full stack engineer",
     images: [
       {
-        url: "/apple-touch-icon.jpeg",
+        url: "/open-graph-image.jpeg",
         width: 1200,
         height: 630,
         alt: "SONG",

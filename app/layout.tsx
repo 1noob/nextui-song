@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: [
-    { rel: "icon", url: "/favicon.svg", color: "#002fa7" },
-    { rel: "mask-icon", url: "/favicon.svg", color: "#002fa7" },
-    { rel: "apple-touch-icon", url: "/apple-touch-icon.jpeg" },
-  ],
+  icons: {
+    icon: "/favicon.svg",
+    apple:
+      "/apple-touch-icon.svg",
+  },
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
   appleWebApp: {
