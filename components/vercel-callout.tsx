@@ -10,7 +10,7 @@ export const VercelCallout: React.FC<unknown> = () => {
   return (
     <Link
       isExternal
-      className="flex justify-end items-center gap-2 text-foreground"
+      className="flex justify-center items-center gap-2 text-foreground"
       href="https://www.vercel.com?utm_source=nextui&utm_marketing=oss"
       onClick={() => {
         trackEvent("VercelCallout", {
