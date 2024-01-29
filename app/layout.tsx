@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: [
-    { rel: "icon", url: "/favicon.svg" },
-    { rel: "mask-icon", url: "/favicon.svg" },
-    { rel: "apple-touch-icon", url: "/apple-touch-icon.svg" },
+    { rel: "icon", url: "/favicon.svg", color: "#002fa7" },
+    { rel: "mask-icon", url: "/favicon.svg", color: "#002fa7" },
+    { rel: "apple-touch-icon", url: "/apple-touch-icon.jpeg" },
   ],
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
