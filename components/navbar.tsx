@@ -10,7 +10,6 @@ import {
   link,
   Link,
   Kbd,
-  Image,
 } from "@nextui-org/react";
 import { Input } from "@nextui-org/input";
 
@@ -20,7 +19,7 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components";
-import { XIcon, GithubIcon, SearchLinearIcon } from "@/components/icons";
+import { XIcon, GithubIcon, SearchLinearIcon, VercelBlueIcon } from "@/components/icons";
 import { DocsSidebar } from "@/components/docs";
 import { useState, FC, ReactNode, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -97,7 +96,7 @@ export const Navbar: FC<NavbarProps> = ({
             href="/"
             onClick={() => handlePressNavbarItem("Home", "/")}
           >
-            <Image width={24} radius="none" src={"/apple-touch-icon.jpeg"} />
+            <VercelBlueIcon/>
             <p className="font-bold text-inherit">SONG</p>
           </NextLink>
         </NavbarBrand>

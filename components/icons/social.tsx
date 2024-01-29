@@ -194,6 +194,24 @@ const VercelIcon: React.FC<IconSvgProps> = ({
   );
 };
 
+const VercelBlueIcon: React.FC<IconSvgProps> = ({
+  width,
+  height = 44,
+  ...props
+}) => {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 76 65"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="#002fa7" />
+    </svg>
+  );
+};
+
 const NpmIcon: React.FC<IconSvgProps> = ({
   width = "1em",
   height = "1em",
@@ -600,4 +618,5 @@ export {
   CodeSandboxIcon,
   JavascriptIcon,
   TypescriptIcon,
+  VercelBlueIcon,
 };
