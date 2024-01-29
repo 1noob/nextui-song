@@ -21,7 +21,7 @@ export const VercelCallout: React.FC<unknown> = () => {
       }}
     >
       <p className="font-bold">Deployed on</p>
-      <VercelBlueIcon height={24}/>
+      <VercelBlueIcon />
       <p className="font-bold">Vercel</p>
     </Link>
   );
