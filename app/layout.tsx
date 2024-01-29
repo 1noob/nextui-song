@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.svg",
+    icon: "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
     apple:
-      "/apple-touch-icon.svg",
+      "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
   },
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
