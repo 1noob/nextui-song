@@ -10,6 +10,7 @@ import {
   link,
   Link,
   Kbd,
+  Image,
 } from "@nextui-org/react";
 import { Input } from "@nextui-org/input";
 
@@ -19,14 +20,9 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components";
-import {
-  XIcon,
-  TwitterIcon,
-  GithubIcon,
-  SearchLinearIcon,
-} from "@/components/icons";
+import { XIcon, GithubIcon, SearchLinearIcon } from "@/components/icons";
 import { DocsSidebar } from "@/components/docs";
-import { useRef, useState, FC, ReactNode, Key, useEffect } from "react";
+import { useState, FC, ReactNode, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { includes } from "lodash";
 import { trackEvent } from "@/utils/va";
@@ -101,6 +97,7 @@ export const Navbar: FC<NavbarProps> = ({
             href="/"
             onClick={() => handlePressNavbarItem("Home", "/")}
           >
+            <Image width={24} radius="none" src={"/apple-touch-icon.jpeg"} />
             <p className="font-bold text-inherit">SONG</p>
           </NextLink>
         </NavbarBrand>
@@ -164,7 +161,7 @@ export const Navbar: FC<NavbarProps> = ({
           <Link isExternal href={siteConfig.links.github} aria-label="Github">
             <GithubIcon className="text-default-500" />
           </Link>
-          <ThemeSwitch className={"hidden lg:flex"}/>
+          <ThemeSwitch className={"hidden lg:flex"} />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarMenuToggle
