@@ -20,9 +20,9 @@ export const VercelCallout: React.FC<unknown> = () => {
         });
       }}
     >
-      <p className="font-normal">Deployed on</p>
+      <p className="font-bold">Deployed on</p>
       <VercelBlueIcon height={24}/>
-      <p className="font-black">Vercel</p>
+      <p className="font-bold">Vercel</p>
     </Link>
   );
 };
