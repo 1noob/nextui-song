@@ -3,8 +3,8 @@
 import React from "react";
 import {Link} from "@nextui-org/react";
 
-import {VercelIcon} from "@/components/icons";
 import {trackEvent} from "@/utils/va";
+import { VercelBlueIcon } from "@/components/icons";
 
 export const VercelCallout: React.FC<unknown> = () => {
   return (
@@ -21,7 +21,8 @@ export const VercelCallout: React.FC<unknown> = () => {
       }}
     >
       <p className="font-normal">Deployed on</p>
-      <VercelIcon className="text-black dark:text-white" height={18} />
+      <VercelBlueIcon width={24}/>
+      <p className="font-black">Vercel</p>
     </Link>
   );
 };

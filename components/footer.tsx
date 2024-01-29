@@ -17,8 +17,8 @@ export const Footer = () => {
   }
 
   return (
-    <footer className="container mx-auto max-w-7x px-12 mb-6">
-      <div className="flex flex-col justify-center items-center gap-1">
+    <footer className="container mx-auto max-w-7xl px-6 relative">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-1">
         <p className="text-sm text-default-400">© {getCurrentYear()} SONG.</p>
         <VercelCallout />
       </div>
