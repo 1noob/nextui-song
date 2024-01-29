@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   icons: [
     { rel: "icon", url: "/favicon.svg" },
     { rel: "mask-icon", url: "/favicon.svg" },
-    { rel: "apple-touch-icon", url: "/apple-touch-icon.jpeg" },
+    { rel: "apple-touch-icon", url: "/apple-touch-icon.svg" },
   ],
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
