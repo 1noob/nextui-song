@@ -11,8 +11,7 @@ html {
 
 body {
   padding-left: calc(100vw - 100%);
-  min-height: 100vh;
-  position: relative;
+  @apply min-h-[100dvh] relative;
 }
 
 .dot-background {
