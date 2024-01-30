@@ -30,8 +30,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: {
     icon: "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
-    apple:
-      "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
+    apple: "/og-image.jpeg",
   },
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
