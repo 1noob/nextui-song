@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: [
-    { rel: "icon", url: "/favicon.ico" },
+    { rel: "icon", url: "/favicon.png" },
     { rel: "apple-touch-icon", url: "/apple-touch-icon.jpeg" },
   ],
   twitter: siteConfig.twitter,
