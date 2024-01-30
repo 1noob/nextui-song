@@ -29,8 +29,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: [
-    { rel: "icon", url: "/favicon.svg" },
-    { rel: "mask-icon", url: "/favicon.svg" },
+    { rel: "icon", url: "/favicon.ico" },
     { rel: "apple-touch-icon", url: "/apple-touch-icon.jpeg" },
   ],
   twitter: siteConfig.twitter,
