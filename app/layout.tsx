@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: {
     icon: "/favicon.png",
-    apple: "/opengraph.jpg",
+    apple: "/apple-touch-icon.jpg",
   },
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
