@@ -28,10 +28,11 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: {
-    icon: "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
-    apple: "/og-image.jpeg",
-  },
+  icons: [
+    { rel: "icon", url: "/favicon.svg" },
+    { rel: "mask-icon", url: "/favicon.svg" },
+    { rel: "apple-touch-icon", url: "/apple-touch-icon.jpeg" },
+  ],
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
   appleWebApp: {
