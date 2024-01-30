@@ -193,7 +193,7 @@ const VercelIcon: React.FC<IconSvgProps> = ({
 
 const VercelBlueIcon: React.FC<IconSvgProps> = ({
   width,
-  height = 32,
+  height = 24,
   ...props
 }) => {
   return (

@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: [
-    { rel: "icon", url: "/favicon.png" },
-    { rel: "apple-touch-icon", url: "/apple-touch-icon.jpeg" },
-  ],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/opengraph.jpg",
+  },
   twitter: siteConfig.twitter,
   openGraph: siteConfig.openGraph,
   appleWebApp: {
