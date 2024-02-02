@@ -20,17 +20,17 @@ export const AboutSideBar = () => {
           Fullstack Engineer
         </p>
         <div className={"flex flex-row justify-center gap-2"}>
-          <Link isExternal href="mailto:song@jackey.love" aria-label="Email">
+          <Link isExternal href="mailto:song@jackey.love" aria-label="email">
             <EmailIcon className={"text-default-500"} size={18} />
           </Link>
           <Link
             isExternal
             href="https://twitter.com/zhousongjie"
-            aria-label="Email"
+            aria-label="twitter"
           >
             <XIcon className={"text-default-500"} size={18} />
           </Link>
-          <Link isExternal href="https://github.com/1noob" aria-label="Email">
+          <Link isExternal href="https://github.com/1noob" aria-label="github">
             <GithubIcon className={"text-default-500"} size={18} />
           </Link>
         </div>
