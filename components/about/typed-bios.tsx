@@ -43,7 +43,7 @@ const TypedBios = () => {
           I love playing video game, LoL is my favorite one.
         </li>
       </ul>
-      <p className={"text-center max-h-[20px]"}>
+      <p className={"text-center h-[40px] lg:h-[70px]"}>
         "<span ref={el} className="text-neutral-900 dark:text-neutral-200 text-sm" />"
       </p>
     </div>
