@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "SONG",
-  description: "full stack engineer",
+  description: "Fullstack engineer",
   ogImage: "/opengraph.png",
   author: "Zhou SongJie",
   email: "song@jackey.love",
@@ -23,13 +23,13 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/1noob",
+    github: "https://github.com/1noob/song.jackey.love",
     twitter: "https://twitter.com/zhousongjie",
   },
   twitter: {
     card: "summary_large_image",
     title: "SONG",
-    description: "full stack engineer",
+    description: "Fullstack engineer",
     image: "/opengraph.png",
     creator: "@zhousongjie",
   },
@@ -38,7 +38,7 @@ export const siteConfig = {
     locale: "en_US",
     url: "https://song.jackey.love",
     siteName: "SONG",
-    description: "full stack engineer",
+    description: "Fullstack engineer",
     images: [
       {
         url: "/opengraph.png",
