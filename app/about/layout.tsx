@@ -8,10 +8,10 @@ export default function AboutLayout({ children }: AboutLayoutProps) {
   return (
     <>
       <div className="grid grid-cols-12">
-        <div className="col-span-12 justify-center overflow-visible relative z-10 lg:block lg:col-span-2 lg:p-4">
+        <div className="col-span-12 justify-center overflow-visible relative z-10 lg:block lg:col-span-2 pt-4 lg:p-4">
           <AboutSideBar />
         </div>
-          {children}
+        {children}
       </div>
     </>
   );
