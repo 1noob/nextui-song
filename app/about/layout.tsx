@@ -1,3 +1,5 @@
+import { AboutSideBar } from "@/components/about/sidebar";
+
 interface AboutLayoutProps {
   children: React.ReactNode;
 }
@@ -5,11 +7,11 @@ interface AboutLayoutProps {
 export default function AboutLayout({ children }: AboutLayoutProps) {
   return (
     <>
-      <div className="grid grid-cols-12 my-12">
-        <div className="hidden overflow-visible relative z-10 lg:block lg:col-span-2" />
-        <div className="col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16">
-          {children}
+      <div className="grid grid-cols-12">
+        <div className="col-span-12 justify-center overflow-visible relative z-10 lg:block lg:col-span-2 lg:p-4">
+          <AboutSideBar />
         </div>
+          {children}
       </div>
     </>
   );

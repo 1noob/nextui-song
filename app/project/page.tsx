@@ -8,17 +8,16 @@ import {
 } from "@nextui-org/react";
 
 import data from "@/config/project.json";
-import NextLink from "next/link";
 
 export default function Project() {
   return (
     <div className="w-full">
       <div className="text-center">
         <h1 className="mb-2 font-bold text-4xl">
-          Personal Project Latest Updates
+          My Project
         </h1>
         <h5 className="text-default-500 text-lg">
-          All the latest job about me.
+          My open-source side projects and ...
         </h5>
       </div>
       <div className="mt-10 grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">

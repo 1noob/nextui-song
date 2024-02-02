@@ -14,7 +14,7 @@ export default function Blog() {
           Welcome To My Blog
         </h1>
         <h5 className="text-default-500 text-lg">
-          All the latest learning about me.
+          All the latest jobs about me.
         </h5>
       </div>
       <BlogList posts={posts} />
