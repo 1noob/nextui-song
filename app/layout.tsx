@@ -63,7 +63,7 @@ export default function RootLayout({
               mobileRoutes={manifest.mobileRoutes}
               routes={manifest.routes}
             />
-            <main className="relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100lvh_-_64px)] lg:min-h-[calc(100dvh_-_168px)] flex-grow">
+            <main className="relative container mx-auto max-w-7xl z-10 px-6 min-h-[calc(100svh_-_64px)] lg:min-h-[calc(100dvh_-_168px)] flex-grow">
               {children}
             </main>
             <div
