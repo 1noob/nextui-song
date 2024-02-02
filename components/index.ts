@@ -5,3 +5,4 @@ export * from "./virtual-anchor";
 export * from "./footer";
 export * from "./navbar";
 export * from "./blog-list";
+export * from "./greeting";

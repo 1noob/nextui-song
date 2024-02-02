@@ -1,19 +1,16 @@
 import GitHubCalendar from "react-github-calendar";
 import { Image } from "@nextui-org/react";
+import Greeting from "@/components/greeting";
 
 export default function Home() {
   return (
     <>
       <div className={"w-full flex flex-col justify-start items-center my-12"}>
-        <div className="text-center">
-          <h1 className="mb-2 font-bold text-4xl">Hello</h1>
-          <h5 className="text-default-500 text-lg">
-            There is nothing to writing. All you do is sit down at a typewriter
-            and bleed.
-          </h5>
-        </div>
+        <Greeting className={"text-center"}>
+          Hello, folks! Discover my stories and creative ideas.
+        </Greeting>
         <div className={"hidden lg:flex"}>
-          <div className={"flex grid grid-cols-5 mt-10"}>
+          <div className={"flex grid grid-cols-5"}>
             <div className={"overflow-hidden w-full grid content-center"}>
               <div className="flex animate-[scy_30s_linear_infinite] w-max">
                 <GitHubCalendar
