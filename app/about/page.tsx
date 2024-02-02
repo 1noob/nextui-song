@@ -84,7 +84,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
   }
   return (
     <>
-      <div className="col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16 my-12">
+      <div className="col-span-12 lg:col-span-10 xl:col-span-8 lg:px-16 my-6 lg:my-12">
         <div className="w-full prose prose-neutral grid gap-10">
           <MDXContent code={doc.body.code} />
           <iframe

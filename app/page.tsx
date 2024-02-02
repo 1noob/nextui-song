@@ -5,7 +5,7 @@ import Greeting from "@/components/greeting";
 export default function Home() {
   return (
     <>
-      <div className={"w-full flex flex-col justify-start items-center my-12"}>
+      <div className={"w-full flex flex-col justify-start items-center my-6 lg:my-12"}>
         <Greeting className={"text-center"}>
           Hello, folks! Discover my stories and creative ideas.
         </Greeting>

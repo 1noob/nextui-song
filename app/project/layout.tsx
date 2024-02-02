@@ -7,7 +7,7 @@ interface ProjectLayoutProps {
 export default function ProjectLayout({ children }: ProjectLayoutProps) {
   return (
     <>
-      <div className="grid my-12">
+      <div className="grid my-6 lg:my-12">
         <Greeting>
           SONG/Project
         </Greeting>
