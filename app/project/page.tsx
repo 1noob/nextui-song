@@ -18,10 +18,10 @@ export default function Project() {
           className="p-2 h-full w-full border-transparent text-start bg-white/5 dark:bg-default-400/10 backdrop-blur-lg backdrop-saturate-[1.8]"
           key={idx}
         >
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+          <CardHeader className="flex-col items-start">
             <h4 className="font-bold text-large">{props.title}</h4>
           </CardHeader>
-          <CardBody className="overflow-visible px-4">
+          <CardBody className="overflow-visible">
             <Link href={props.url}>
               <Image
                 radius={"sm"}
@@ -30,7 +30,7 @@ export default function Project() {
               />
             </Link>
           </CardBody>
-          <CardFooter className={"pt-2 px-4 flex-col items-start"}>
+          <CardFooter className={"flex-col items-start"}>
             <p className="text-tiny uppercase font-bold">{props.domain}</p>
             <Link isExternal showAnchorIcon href={props.source}>
               <small>Visit source code on GitHub.</small>

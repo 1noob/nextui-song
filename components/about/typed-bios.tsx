@@ -28,9 +28,6 @@ const TypedBios = () => {
           I live in <b className="font-medium">Guangdong, Guangzhou</b>.
         </li>
         <li>
-          I was born in the beautiful <b className="font-medium">Yunfu</b> city.
-        </li>
-        <li>
           My first programming language I learned was <b className="font-medium">C++</b>.
         </li>
         <li>
@@ -40,7 +37,7 @@ const TypedBios = () => {
           I love listening and pure music.
         </li>
         <li>
-          I love playing video game, LoL is my favorite one.
+          I love playing game, LoL is my favorite one.
         </li>
       </ul>
       <p className={"text-center h-[40px] lg:h-[70px]"}>

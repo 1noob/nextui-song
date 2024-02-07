@@ -4,12 +4,12 @@ import { GithubIcon, XIcon, EmailIcon } from "@/components/icons";
 
 export const AboutSideBar = () => {
   return (
-    <div className={"lg:max-w-[12rem] relative lg:fixed flex gap-4 flex-col"}>
+    <div className={"lg:max-w-[12rem] relative lg:fixed flex gap-4 flex-col p-4"}>
       <div className={"flex justify-center"}>
         <Image
           className={"rounded-full"}
           classNames={{
-            wrapper: "w-1/3 lg:w-2/3",
+            wrapper: "w-1/3 lg:w-2/3 border-2 rounded-full border-gray-300",
           }}
           src={"/avatar/song.png"}
         />
