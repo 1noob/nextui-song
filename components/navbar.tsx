@@ -110,17 +110,6 @@ export const Navbar: FC<NavbarProps> = ({
             <NextLink
               className={navLinkClasses}
               color="foreground"
-              data-active={includes(pathname, "docs")}
-              href="/docs/hello"
-              onClick={() => handlePressNavbarItem("Docs", "/docs/hello")}
-            >
-              Docs
-            </NextLink>
-          </NavbarItem>
-          <NavbarItem>
-            <NextLink
-              className={navLinkClasses}
-              color="foreground"
               data-active={includes(pathname, "blog")}
               href="/blog"
               onClick={() => handlePressNavbarItem("Blog", "/blog")}
@@ -137,6 +126,17 @@ export const Navbar: FC<NavbarProps> = ({
               onClick={() => handlePressNavbarItem("Project", "/project")}
             >
               Project
+            </NextLink>
+          </NavbarItem>
+          <NavbarItem>
+            <NextLink
+              className={navLinkClasses}
+              color="foreground"
+              data-active={includes(pathname, "docs")}
+              href="/docs/hello"
+              onClick={() => handlePressNavbarItem("Docs", "/docs/hello")}
+            >
+              Docs
             </NextLink>
           </NavbarItem>
           <NavbarItem>
