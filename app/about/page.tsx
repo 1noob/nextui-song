@@ -90,8 +90,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
           <iframe
             className={"w-full rounded-xl h-[175px]"}
             allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-            scrolling="no"
-            frameBorder="0"
             sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
             src="https://embed.music.apple.com/cn/album/%E5%B9%B2%E6%9D%AF/1081297124?i=1081297130"
           />
