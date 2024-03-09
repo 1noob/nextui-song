@@ -11,7 +11,7 @@ export const AboutSideBar = () => {
           classNames={{
             wrapper: "w-1/3 lg:w-2/3 border-2 rounded-full border-gray-300",
           }}
-          src={"/avatar/song.png"}
+          src={"/avatar/song.jpeg"}
         />
       </div>
       <div className={"flex flex-col gap-2"}>
