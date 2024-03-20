@@ -146,6 +146,7 @@ function TreeItem<T>(props: TreeItemProps<T>) {
               "w-full",
               "font-normal",
               "before:mr-4",
+              "before:ml-2",
               "before:content-['']",
               "before:block",
               "before:bg-default-300",
