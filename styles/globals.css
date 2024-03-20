@@ -10,7 +10,6 @@ html {
 }
 
 body {
-  padding-left: calc(100vw - 100%);
   @apply min-h-[100dvh] relative;
 }
 
