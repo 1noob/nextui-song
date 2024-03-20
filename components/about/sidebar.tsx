@@ -4,7 +4,7 @@ import { GithubIcon, XIcon, EmailIcon } from "@/components/icons";
 
 export const AboutSideBar = () => {
   return (
-    <div className={"lg:max-w-[12rem] relative lg:fixed flex gap-4 flex-col p-4"}>
+    <div className={"lg:max-w-[12rem] relative lg:fixed flex gap-4 flex-col"}>
       <div className={"flex justify-center"}>
         <Image
           className={"rounded-full"}
@@ -35,7 +35,6 @@ export const AboutSideBar = () => {
           </Link>
         </div>
       </div>
-      <TypedBios />
     </div>
   );
 };
