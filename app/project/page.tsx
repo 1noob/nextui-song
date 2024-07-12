@@ -27,10 +27,6 @@ export default function Project() {
             <Link href={props.url}>
               <Image
                 radius={"sm"}
-                classNames={{
-                  wrapper:
-                    "w-full h-full",
-                }}
                 className={"border-1 dark:border-0 dark:brightness-75 w-full"}
                 src={`${api}`+props.url}
                 sizes={1000}
