@@ -41,6 +41,7 @@
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.1.1",
     "autoprefixer": "10.4.16",
+    "capture-website": "^4.1.0",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^3.2.0",

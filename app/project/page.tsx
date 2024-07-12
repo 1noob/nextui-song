@@ -9,6 +9,8 @@ import {
 
 import data from "@/config/project.json";
 
+const api = "https://backup15.terasp.net/api/screenshot?resX=1280&resY=900&outFormat=jpg&waitTime=100&isFullPage=false&dismissModals=false&url="
+
 export default function Project() {
   return (
     <div className="w-full grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
@@ -26,7 +28,7 @@ export default function Project() {
               <Image
                 radius={"sm"}
                 className={"border-1 dark:border-0 dark:brightness-75"}
-                src={props.image}
+                src={`${api}`+props.url}
               />
             </Link>
           </CardBody>
