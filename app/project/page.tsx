@@ -33,6 +33,7 @@ export default function Project() {
                 }}
                 className={"border-1 dark:border-0 dark:brightness-75 w-full"}
                 src={`${api}`+props.url}
+                sizes={1000}
               />
             </Link>
           </CardBody>
