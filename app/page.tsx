@@ -30,7 +30,7 @@ export default function Home() {
             <div className={"flex grid col-span-4 content-center"}>
               <Image
                 src={
-                  "https://github.jackey.love/graph?" +
+                  "https://git.jackey.love/graph?" +
                   "username=1noob&theme=github-compact&hide_border=true&hide_title=true&height=340"
                 }
               />
