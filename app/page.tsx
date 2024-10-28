@@ -10,7 +10,7 @@ export default function Home() {
           Hello, folks! Discover my stories and creative ideas.
         </Greeting>
         <div className={"hidden lg:flex"}>
-          <div className={"flex grid grid-cols-5"}>
+          <div className={"grid grid-cols-5"}>
             <div className={"overflow-hidden w-full grid content-center"}>
               <div className="flex animate-[scy_30s_linear_infinite] w-max">
                 <GitHubCalendar
@@ -27,7 +27,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className={"flex grid col-span-4 content-center"}>
+            <div className={"grid col-span-4 content-center"}>
               <Image
                 src={
                   "https://git.jackey.love/graph?" +
@@ -37,7 +37,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={"grid flex lg:hidden w-full"}>
+        <div className={"flex lg:hidden w-full"}>
           <div className={"overflow-hidden w-full"}>
             <div className="flex animate-[scy_60s_linear_infinite] w-max">
               <div className={"content-center grid"}>
