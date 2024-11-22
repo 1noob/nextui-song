@@ -93,7 +93,7 @@ export default async function DocPage({ params }: BlogProps) {
     <div className="w-full flex flex-col justify-start items-center prose prose-neutral">
       <div className="w-full max-w-4xl">
         <MDXContent code={post.body.code} />
-        <div className="flex mt-12 grid grid-cols-1 gap-3">
+        <div className="mt-12 grid grid-cols-1 gap-3">
           <div className="flex w-full flex-col items-start">
             <User
               isExternal
