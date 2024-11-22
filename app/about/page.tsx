@@ -5,7 +5,6 @@ import { allPages } from "contentlayer/generated";
 import dynamic from "next/dynamic";
 import { getHeadings } from "@/libs/docs/utils";
 import { DocsToc } from "@/components/docs";
-import { useTheme } from "next-themes";
 
 const MDXContent = dynamic(
   () => {
@@ -79,7 +78,6 @@ export async function generateMetadata({
 
 export default async function AboutPage({ params }: AboutPageProps) {
   const { doc, headings } = await getPageFromParams({ params });
-  const { systemTheme } = useTheme();
 
   if (!doc) {
     notFound();
@@ -93,10 +91,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
             className={"w-full rounded-xl h-[175px]"}
             allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
             sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src={
-              `https://embed.music.apple.com/cn/album/%E5%B9%B2%E6%9D%AF/1081297124?i=1081297130?theme=` +
-              systemTheme
-            }
+            src="https://embed.music.apple.com/cn/album/%E5%B9%B2%E6%9D%AF/1081297124?i=1081297130"
           />
         </div>
       </div>
