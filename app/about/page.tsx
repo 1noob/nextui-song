@@ -16,12 +16,12 @@ const MDXContent = dynamic(
 
 interface AboutPageProps {
   params: {
-    slug: string;
+    slug: string[];
   };
 }
 
 async function getPageFromParams({ params }: AboutPageProps) {
-  const slug = params.slug
+  const slug = params.slug?.join("/") || "";
   const doc = allPages.find((doc) => doc.slugAsParams === slug);
 
   if (!doc) {
@@ -69,13 +69,13 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<
-  AboutPageProps["params"][]
-> {
-  return allPages.map((doc) => ({
-    slug: doc.slugAsParams,
-  }));
-}
+// export async function generateStaticParams(): Promise<
+//   AboutPageProps["params"][]
+// > {
+//   return allPages.map((doc) => ({
+//     slug: doc.slugAsParams,
+//   }));
+// }
 
 export default async function AboutPage({ params }: AboutPageProps) {
   const { doc, headings } = await getPageFromParams({ params });
