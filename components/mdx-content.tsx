@@ -11,7 +11,7 @@ interface MDXContentProps {
   code: string;
 }
 
-const MDXContent: React.FC<unknown> = ({ code }: MDXContentProps) => {
+const MDXContent: React.FC<any> = ({ code }: MDXContentProps) => {
   const Component = useMDXComponent(code);
 
   return (
