@@ -16,12 +16,12 @@ const MDXContent = dynamic(
 
 interface AboutPageProps {
   params: {
-    slug: string[];
+    slug: string;
   };
 }
 
 async function getPageFromParams({ params }: AboutPageProps) {
-  const slug = params.slug?.join("/") || "";
+  const slug = params.slug
   const doc = allPages.find((doc) => doc.slugAsParams === slug);
 
   if (!doc) {
