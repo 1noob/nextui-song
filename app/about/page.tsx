@@ -68,13 +68,6 @@ export async function generateMetadata({
   };
 }
 
-// export async function generateStaticParams(): Promise<
-//   AboutPageProps["params"][]
-// > {
-//   return allPages.map((doc) => ({
-//     slug: doc.slugAsParams,
-//   }));
-// }
 
 export default async function AboutPage({ params }: AboutPageProps) {
   const { doc, headings } = await getPageFromParams({ params });
